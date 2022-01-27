@@ -48,7 +48,7 @@ public class Homepage {
 
 	@When("^enter \"([^\"]*)\"$")
 	public void enter(String arg1) throws Throwable {
-		driver.findElement(By.id("login-form-usernames")).sendKeys("Jyotipassion14@gmail.com");
+		driver.findElement(By.id("login-form-username")).sendKeys("Jyotipassion14@gmail.com");
 	    	    throw new PendingException();
 	}
 
