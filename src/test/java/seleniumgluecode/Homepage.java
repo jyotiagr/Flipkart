@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.PendingException;
@@ -30,19 +31,19 @@ public class Homepage {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         
         // URL to open
-        driver.get("https://www.marksandspencer.in/");
-        Thread.sleep(1000);
+        driver.get("https://www.flipkart.com/");
+        Thread.sleep(50000);
         
-        System.out.println("inside URL");
-        
-        throw new PendingException();
+        System.out.println("inside flipkart URL");
 	}
 
 	@Given("^User clicked on login icon$")
 	public void user_clicked_on_login_icon() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	driver.findElement(By.linkText("#login")).click();
-	    throw new PendingException();
+		System.out.println("inside login");
+		Thread.sleep(10000);
+		driver.findElement(By.xpath("//input[@class='_2IX_2- VJZDxU']")).sendKeys("jyoti");
+	
 	}
 	
 
