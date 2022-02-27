@@ -5,6 +5,17 @@ Feature: To test Login Functionality
 
   Scenario: To test the login
     Given User clicked on login icon
-    When enter "jyotipassion14@gmail.com"
+    When enter "Mughalsarai"
+    And click on login button
+    And enter "8218092472" in mobile number
     And click on continue button
-    Then user is on the dashboard
+    And enter "Mughalsarai" in password
+    And click on login button
+    Then verify my Account is displaying
+    
+    
+    
+     
+     
+     
+     

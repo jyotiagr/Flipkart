@@ -14,7 +14,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class Payment {
+public class Cart {
 
 	  public static WebDriver driver;
 	
@@ -100,7 +100,6 @@ public void user_clicks_on_Home_Furniture() throws Throwable {
 }
 
 
-
 @And("^user clicks on Bedsheets$")
 public void user_clicks_on_Bedsheets() throws Throwable {
 	driver.findElement(By.xpath("//a[@class='_3QN6WI'][normalize-space()='Bedsheets']"));
@@ -112,61 +111,22 @@ public void bedsheets_should_be_displayed() throws Throwable {
 	driver.findElement(By.xpath("//h1[@class='_10Ermr']"));
 	System.out.println("Bedsheets visible");
 }
-
-@When("^user go to cart$")
-public void user_go_to_cart() throws Throwable {
-	driver.findElement(By.xpath("//div[@class='KK-o3G']"));
-	System.out.println("In cart");
+@When("^user clicks on one bedsheet$")
+public void user_clicks_on_one_bedsheet() throws Throwable {
+    driver.findElement(By.xpath("//img[@alt='RisingStar 180 TC Cotton Double Checkered Bedsheet']"));
+	System.out.println("Bedsheets click");
 }
 
-@When("^click on Place order button$")
-public void click_on_Place_order_button() throws Throwable {
-    driver.findElement(By.xpath("//span[normalize-space()='Place Order']"));
-	System.out.println("Placed order");
+@When("^user clicks on Add to cart button$")
+public void user_clicks_on_Add_to_cart_button() throws Throwable {
+	driver.findElement(By.xpath("//button[@class='_2KpZ6l _2U9uOA _3v1-ww']"));
 }
 
-@When("^click on the checkbox$")
-public void click_on_the_checkbox() throws Throwable {
-	driver.findElement(By.xpath("//label[@for='CNTCT250A2F14ABF14CF281154A9DB']//div[@class='_1XFPmK']"));
-	System.out.println("checkbox selected");
+@Then("^item must be added into the cart$")
+public void item_must_be_added_into_the_cart() throws Throwable {
+	driver.findElement(By.xpath("//div[@class='_3g_HeN']"));
 }
 
-@When("^click on Deliver here button$")
-public void click_on_Deliver_here_button() throws Throwable {
-    driver.findElement(By.xpath("//button[@class='_2KpZ6l RLM7ES _3AWRsL']"));
-	System.out.println("Deliver here");
-}
-
-@When("^click on Continue button$")
-public void click_on_Continue_button() throws Throwable {
-    driver.findElement(By.xpath("//button[@class='_2KpZ6l _1seccl _3AWRsL']"));
-	System.out.println("Continue click");
-}
-
-@When("^select the checkbox cash on delivery$")
-public void select_the_checkbox_cash_on_delivery() throws Throwable {
-    driver.findElement(By.xpath("//label[@for='COD']//div[@class='_1XFPmK']"));
-	
-}
-
-@When("^enter the characters$")
-public void enter_the_characters() throws Throwable {
-	driver.findElement(By.xpath("//input[@name='captcha']"));
-   
-}
-
-@When("^click on confirm order$")
-public void click_on_confirm_order() throws Throwable {
-    driver.findElement(By.xpath("//button[@type='button']")).getText().toString();
-    
-}
-
-@Then("^order has been placed$")
-public void order_has_been_placed() throws Throwable {
-	String ActualTitle =("Order placed");
-	String ExpectedTitle = "order placed";
-	Assert.assertEquals(ExpectedTitle, ActualTitle);
-}
 
 }
 
