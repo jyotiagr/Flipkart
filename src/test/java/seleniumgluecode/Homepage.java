@@ -96,10 +96,10 @@ public class Homepage {
 @When("^user clicks on Home & Furniture$")
 public void user_clicks_on_Home_Furniture() throws Throwable {
 	driver.findElement(By.xpath("//span[@class='_2I9KP_ _2WDRax']"));
-	System.out.println("Home");
+	System.out.println("Homes");
 }
 
-
+	
 
 @And("^user clicks on Bedsheets$")
 public void user_clicks_on_Bedsheets() throws Throwable {
